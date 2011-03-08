@@ -7,14 +7,6 @@ public class TennisScore {
     private int player1Score;
     private int player2Score;
 
-//    public int getPlayer1Score() {
-//        return player1Score;
-//    }
-//
-//    public int getPlayer2Score() {
-//        return player2Score;
-//    }
-
     public TennisScore(int player1, int player2) {
         player1Score = player1;
         player2Score = player2;

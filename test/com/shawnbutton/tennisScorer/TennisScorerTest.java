@@ -3,7 +3,7 @@ package com.shawnbutton.tennisScorer;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.equalTo;
+import static com.shawnbutton.tennisScorer.TennisScoreIsEqual.theSameScoreAs;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -25,7 +25,7 @@ public class TennisScorerTest {
         TennisScore score = new TennisScore(0,0);
         score = scorer.getNewScore(score, PlayerEnum.PLAYER1);
 
-        assertThat(new TennisScore(15,0), equalTo(score));
+        assertThat(new TennisScore(15,0), theSameScoreAs(score));
 
     }
 
@@ -34,7 +34,7 @@ public class TennisScorerTest {
         TennisScore score = new TennisScore(0,0);
         score = scorer.getNewScore(score, PlayerEnum.PLAYER2);
 
-        assertThat(new TennisScore(0,15), equalTo(score));
+        assertThat(new TennisScore(0,15), theSameScoreAs(score));
 
     }
 
@@ -52,7 +52,7 @@ public class TennisScorerTest {
         TennisScore score = new TennisScore(15,0);
         score = scorer.getNewScore(score, PlayerEnum.PLAYER1);
 
-        assertThat(new TennisScore(30,0), equalTo(score));
+        assertThat(new TennisScore(30,0), theSameScoreAs(score));
 
     }
 
@@ -61,7 +61,8 @@ public class TennisScorerTest {
         TennisScore score = new TennisScore(15,15);
         score = scorer.getNewScore(score, PlayerEnum.PLAYER2);
 
-        assertThat(new TennisScore(15,30), equalTo(score));
+        assertThat(score, is(theSameScoreAs(new TennisScore(15, 30))));
+
 
     }
 
